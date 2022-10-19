@@ -175,9 +175,6 @@
                                                             <rect key="frame" x="0.0" y="40" width="382" height="33"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
-                                                            <connections>
-                                                                <outlet property="delegate" destination="qf3-hn-oI3" id="VqW-c4-dny"/>
-                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
@@ -236,11 +233,22 @@
                     <navigationItem key="navigationItem" title="New Place" id="9w0-cY-pAL">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uSQ-QS-f6o">
                             <connections>
-                                <segue destination="nGx-cc-DRG" kind="unwind" unwindAction="cancelAction:" id="6ON-98-BDB"/>
+                                <action selector="cancelAction:" destination="qf3-hn-oI3" id="e3H-cM-NnC"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="OeJ-n2-7wr"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="OeJ-n2-7wr">
+                            <connections>
+                                <segue destination="nGx-cc-DRG" kind="unwind" unwindAction="unwindSegue:" id="or5-ft-Ods"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="placeImage" destination="3xu-mW-JcH" id="Cha-mj-XZo"/>
+                        <outlet property="placeLocation" destination="cJR-2F-SVk" id="5s3-ZV-1hr"/>
+                        <outlet property="placeName" destination="sVe-xh-wki" id="9vA-Ao-h1E"/>
+                        <outlet property="placeType" destination="ztT-kI-xgT" id="ynJ-uN-oVn"/>
+                        <outlet property="saveButton" destination="OeJ-n2-7wr" id="eHV-Is-BRF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bsm-bE-aDF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="nGx-cc-DRG" userLabel="Exit" sceneMemberID="exit"/>
